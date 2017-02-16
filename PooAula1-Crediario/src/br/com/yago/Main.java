@@ -14,17 +14,24 @@ public class Main {
 
 		Crediario crediario = new Crediario();
 		crediario.valorProduto = 100;
+		
 		parcelas = new Scanner(System.in);
 		System.out.println("Digite a quantidade de vezes que deseja parcelar o carrinho de rolimã(T6I): ");
 		crediario.quatidadeParcela = parcelas.nextInt();
+		
+		double Valorparcela = crediario.valorProduto / crediario.quatidadeParcela;
 
-		if (crediario.quatidadeParcela > 10 && crediario.quatidadeParcela < 1) {
+		if (crediario.quatidadeParcela <= 10 && crediario.quatidadeParcela >= 1) {
 
-			System.out.println("O produto só pode ser parcelado de 1 até 10 vezes");
+			System.out.println("O produto: " + produto.codigo + "\n" + produto.item + "\nDa marca: " 
+					+ produto.marca +  "\nDo valor de: R$"+ crediario.valorProduto 
+					+ "\nFoi parcelado em: " + crediario.quatidadeParcela 
+					+ " vez(es), e cada parcela com o valor de: R$"+ Valorparcela);
 
 		} else {
-			double Valorparcela = crediario.valorProduto / crediario.quatidadeParcela;
-			System.out.println("O produto: " + produto.codigo + "\n" + produto.item + "\n da marca: " + produto.marca +  "o valor de:"+ crediario.valorProduto + "" );
+			
+			System.out.println("O produto só pode ser parcelado de 1 até 10 vezes");
+			
 		}
 
 	}
